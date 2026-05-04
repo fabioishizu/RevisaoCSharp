@@ -9,10 +9,16 @@ Assembly.GetAssembly(typeof(Aula)).GetTypes()
     .Where(aula => aula.Namespace == "TiposBasicoDeDadosCSharp.Aulas")
     .ToList()
     .ForEach(item => 
-    { 
-        var aula = (Aula)Activator.CreateInstance(item);
-        aulasScript.Add(aula);
-        Console.WriteLine($"{aulasScript.IndexOf(aula)} - {aula.titulo}");
+    {
+        try
+        {
+            var aula = (Aula)Activator.CreateInstance(item);
+            aulasScript.Add(aula);
+            Console.WriteLine($"{aulasScript.IndexOf(aula)} - {aula.titulo}");
+        }
+        catch
+        {
+        }
     }
 );
 Console.WriteLine("Digite o index da aula para executar:");
