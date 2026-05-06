@@ -15,6 +15,12 @@ namespace Aulas
             Quantidade = _quantidade;
         }
 
+        public Produto(string _nome, double _preco)
+        {
+            Nome = _nome;
+            Preco = _preco;
+        }
+
         public double ValorTotalEmEstoque()
         {
             return Preco * Quantidade;
