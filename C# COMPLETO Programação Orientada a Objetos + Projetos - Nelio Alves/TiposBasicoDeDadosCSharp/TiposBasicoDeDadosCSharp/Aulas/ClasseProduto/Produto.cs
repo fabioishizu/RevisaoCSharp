@@ -8,6 +8,23 @@ namespace Aulas
         private double _preco;
         private int _quantidade;
 
+        public int Quantidade { get { return _quantidade; } }
+        public string Nome {
+            get { return _nome; }
+            set {
+                    if (value == null || value.Length <= 1)
+                    {
+                        throw new ArgumentException("O nome do produto deve conter mais de um caractere.");
+                    }
+                    else
+                    {
+                        _nome = value;
+                    }; 
+                } 
+        }
+
+        public double Preco { get { return _preco; } }
+
         public Produto()
         {
             _quantidade = 10;
@@ -22,29 +39,6 @@ namespace Aulas
         public Produto(string nome, double preco, int quantidade) : this(nome, preco)
         {
             _quantidade = quantidade;
-        }
-
-        public string GetNome()
-        {
-            return _nome;
-        }
-
-        public int GetQuantidade()
-        {
-            return this._quantidade;
-        }
-
-        public double GetPreco()
-        {
-            return this._preco;
-        }
-
-        public void SetNome(string nome)
-        {
-            if (nome != null && nome.Length > 1)
-            {
-                _nome = nome;
-            }
         }
 
         public double ValorTotalEmEstoque()

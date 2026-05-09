@@ -17,10 +17,10 @@ namespace TiposBasicoDeDadosCSharp.Aulas
         {
             Produto p = new Produto("Tv", 900.00, 10);
 
-            p.SetNome("TV 60 Polegadas");
-            Console.WriteLine(p.GetNome());
-            Console.WriteLine(p.GetPreco());
-            Console.WriteLine(p.GetQuantidade());
+            p.Nome = "TV 60 Polegadas";
+            Console.WriteLine(p.Nome);
+            Console.WriteLine(p.Preco);
+            Console.WriteLine(p.Quantidade);
         }
     }
 }
